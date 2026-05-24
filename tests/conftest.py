@@ -102,6 +102,11 @@ def pytest_exception_interact(node, call, report):
     """
     Attach the screenshot inside the main Allure Test Body block
     """
+    # Check if 'node' has 'funcargs' attribute (only true for running test functions,
+    # false for file collection, syntax errors, or setup modules)
+    if not hasattr(node, "funcargs"):
+        return
+
     # Look for the built-in Playwright page fixture inside the failing test node
     if "page" in node.funcargs:
         page = node.funcargs["page"]
@@ -110,13 +115,16 @@ def pytest_exception_interact(node, call, report):
         test_name = node.name.replace("[", "_").replace("]", "_")
         screenshot_path = f"screenshots/FAIL_{test_name}.png"
 
-        # Capture the live state binary of the DOM at the exact moment of failure
-        screenshot_bytes = page.screenshot(
-            path=screenshot_path, full_page=True)
+        try:
+            # Capture the live state binary of the DOM at the exact moment of failure
+            screenshot_bytes = page.screenshot(
+                path=screenshot_path, full_page=True)
 
-        # Attach the binary directly onto the core Test Body level block inside Allure
-        allure.attach(
-            screenshot_bytes,
-            name=f"FAIL_screenshot_{test_name}",
-            attachment_type=allure.attachment_type.PNG
-        )
+            # Attach the binary directly onto the core Test Body level block inside Allure
+            allure.attach(
+                screenshot_bytes,
+                name=f"FAIL_screenshot_{test_name}",
+                attachment_type=allure.attachment_type.PNG
+            )
+        except Exception as e:
+            print(f"\nCould not capture screenshot during failure hook: {e}")
