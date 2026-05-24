@@ -2,7 +2,6 @@
 .venv/
 venv/
 ENV/
-.vscode/
 
 # Cache
 .pytest_cache/
@@ -17,3 +16,6 @@ config/state.json
 allure-results/
 allure-history/
 screenshots/
+
+# Editor Configurations
+.vscode/
