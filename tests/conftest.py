@@ -78,6 +78,17 @@ def global_authentication_setup(pytestconfig):
 
         page.wait_for_url("**/index.php?rt=account/account")
 
+        page.goto("/index.php?rt=checkout/cart", wait_until="domcontentloaded")
+
+        # If there are items in the cart table layout grid, delete them
+        remove_checkboxes = page.locator("input[name^='remove']")
+        if remove_checkboxes.count() > 0:
+            # Check every remove box inside the cart grid
+            for i in range(remove_checkboxes.count()):
+                remove_checkboxes.nth(i).check()
+            # Click the dynamic update button to wipe out all items instantly
+            page.locator("#cart_update").click()
+
         context.storage_state(path=str(STORAGE_PATH))
         browser.close()
 
