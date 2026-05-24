@@ -43,7 +43,7 @@ jobs:
           USERNAME: ${{ secrets.USERNAME }}
           PASSWORD: ${{ secrets.PASSWORD }}
         # This overrides local pytest.ini flags
-        run: pytest -o addopts="-v --base-url=https://automationteststore.com"
+        run: pytest -o addopts="-v --base-url=https://automationteststore.com --alluredir=allure-results"
 
       # ─── 📊 ALLURE COMPILATION & DEPLOYMENT SECTION ─────────────────────────
       - name: Load Allure Report History
