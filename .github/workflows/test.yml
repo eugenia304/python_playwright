@@ -48,7 +48,7 @@ jobs:
 
       - name: Execute Automated Test Matrix
         env:
-          STORE_USER: ${{ secrets.STORE_USER }}
-          STORE_PASS: ${{ secrets.STORE_PASS }}
+          USERNAME: ${{ secrets.USERNAME }}
+          PASSWORD: ${{ secrets.PASSWORD }}
         # This overrides local pytest.ini flags
         run: pytest -o addopts=""
