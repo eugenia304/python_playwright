@@ -33,8 +33,8 @@ jobs:
       - name: Execute Automated Test Matrix
         # We inject your secret environment variables securely into the runner environment
         env:
-          STORE_USER: ${{ secrets.STORE_USER }}
-          STORE_PASS: ${{ secrets.STORE_PASS }}
+          USERNAME: ${{ secrets.USERNAME }}
+          PASSWORD: ${{ secrets.PASSWORD }}
         # Run headlessly in CI, overriding the headed flag from pytest.ini
         run: pytest --headless
 
@@ -45,3 +45,10 @@ jobs:
           name: playwright-failure-screenshots
           path: screenshots/
           retention-days: 7
+
+      - name: Execute Automated Test Matrix
+        env:
+          STORE_USER: ${{ secrets.STORE_USER }}
+          STORE_PASS: ${{ secrets.STORE_PASS }}
+        # This overrides local pytest.ini flags
+        run: pytest -o addopts=""
