@@ -2,6 +2,7 @@
 .venv/
 venv/
 ENV/
+.vscode/
 
 # Cache
 .pytest_cache/
