@@ -62,7 +62,7 @@ jobs:
           keep_reports: 20
 
       - name: Publish Allure Report Website to GitHub Pages
-        uses: peaceiris/actions-gh-pages-action@v4
+        uses: peaceiris/actions-gh-pages@v4
         if: always()
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
