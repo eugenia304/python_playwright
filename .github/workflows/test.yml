@@ -44,3 +44,27 @@ jobs:
           PASSWORD: ${{ secrets.PASSWORD }}
         # This overrides local pytest.ini flags
         run: pytest -o addopts="-v --base-url=https://automationteststore.com"
+
+      # ─── 📊 ALLURE COMPILATION & DEPLOYMENT SECTION ─────────────────────────
+      - name: Load Allure Report History
+        uses: actions/checkout@v4
+        if: always() # Ensures reports are generated even if tests fail
+        with:
+          ref: gh-pages
+          path: gh-pages
+
+      - name: Build Dynamic Allure Report Dashboard
+        uses: simple-elf/allure-report-action@master
+        if: always()
+        with:
+          allure_results: allure-results
+          allure_history: allure-history
+          keep_reports: 20
+
+      - name: Publish Allure Report Website to GitHub Pages
+        uses: peaceiris/actions-gh-pages-action@v4
+        if: always()
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_branch: gh-pages
+          publish_dir: allure-history
