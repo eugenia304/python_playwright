@@ -1,26 +1,40 @@
 "DESCRIPTION","DURATION IN MS","NAME","PARENT SUITE","START TIME","STATUS","STOP TIME","SUB SUITE","SUITE","TEST CLASS","TEST METHOD"
 "
-If exactly 1 item found - the site redirects user to the product page
-If more than 1 item found - the product cards are listed and the URL contains search text
-If no items found - 'There is no product that matches the search criteria.' message displayed
-","0","test_search_products[chromium-Shampoo-multi-Shampoo]","tests","Sun May 24 23:14:10 UTC 2026","failed","Sun May 24 23:14:10 UTC 2026","","test_search","",""
-"
-If exactly 1 item found - the site redirects user to the product page
-If more than 1 item found - the product cards are listed and the URL contains search text
-If no items found - 'There is no product that matches the search criteria.' message displayed
-","0","test_search_products[chromium-XYZ-error-There is no product that matches the search criteria.]","tests","Sun May 24 23:14:10 UTC 2026","failed","Sun May 24 23:14:10 UTC 2026","","test_search","",""
-"
-If exactly 1 item found - the site redirects user to the product page
-If more than 1 item found - the product cards are listed and the URL contains search text
-If no items found - 'There is no product that matches the search criteria.' message displayed
-","0","test_search_products[chromium-'; DROP TABLE Products;---error-There is no product that matches the search criteria.]","tests","Sun May 24 23:14:10 UTC 2026","failed","Sun May 24 23:14:10 UTC 2026","","test_search","",""
+Verify that a guest/logged in user can delete an item from the cart
+Steps:
+1. Add an item to the cart
+2. Open the Cart page via top menu
+3. Click the bin icon
+","4253","test_delete_item[chromium-guest]","tests","Sun May 24 23:17:56 UTC 2026","passed","Sun May 24 23:18:01 UTC 2026","","test_cart_workflow","",""
 "
 Verify that a guest/logged in user can change the quantity of an item in the cart
 Steps:
 1. Add an item to the cart
 2. Open the Cart page via top menu
 3. Set new product quantity and click Update
-","0","test_change_quantity[chromium-guest]","tests","Sun May 24 23:14:09 UTC 2026","failed","Sun May 24 23:14:09 UTC 2026","","test_cart_workflow","",""
+","5202","test_change_quantity[chromium-logged_in]","tests","Sun May 24 23:18:09 UTC 2026","passed","Sun May 24 23:18:15 UTC 2026","","test_cart_workflow","",""
+"
+If exactly 1 item found - the site redirects user to the product page
+If more than 1 item found - the product cards are listed and the URL contains search text
+If no items found - 'There is no product that matches the search criteria.' message displayed
+","4180","test_search_products[chromium-Shampoo-multi-Shampoo]","tests","Sun May 24 23:18:19 UTC 2026","passed","Sun May 24 23:18:23 UTC 2026","","test_search","",""
+"
+If exactly 1 item found - the site redirects user to the product page
+If more than 1 item found - the product cards are listed and the URL contains search text
+If no items found - 'There is no product that matches the search criteria.' message displayed
+","3191","test_search_products[chromium-XYZ-error-There is no product that matches the search criteria.]","tests","Sun May 24 23:18:23 UTC 2026","passed","Sun May 24 23:18:26 UTC 2026","","test_search","",""
+"
+If exactly 1 item found - the site redirects user to the product page
+If more than 1 item found - the product cards are listed and the URL contains search text
+If no items found - 'There is no product that matches the search criteria.' message displayed
+","3776","test_search_products[chromium-'; DROP TABLE Products;---error-There is no product that matches the search criteria.]","tests","Sun May 24 23:18:26 UTC 2026","passed","Sun May 24 23:18:30 UTC 2026","","test_search","",""
+"
+Verify that a guest/logged in user can change the quantity of an item in the cart
+Steps:
+1. Add an item to the cart
+2. Open the Cart page via top menu
+3. Set new product quantity and click Update
+","4246","test_change_quantity[chromium-guest]","tests","Sun May 24 23:17:52 UTC 2026","passed","Sun May 24 23:17:56 UTC 2026","","test_cart_workflow","",""
 "
 Verify that a guest/logged in user can add an item multiple times
 Steps:
@@ -29,14 +43,7 @@ Steps:
 3. Check that the cart tab was updated and says 1
 4. Hover over the cart tab and check that it displays correct number of items
 5. Add the same item again and repeat the steps 3 and 4
-","0","test_add_item_and_verify_dropdown[chromium-logged_in]","tests","Sun May 24 23:14:09 UTC 2026","failed","Sun May 24 23:14:09 UTC 2026","","test_cart_workflow","",""
-"
-Verify that a guest/logged in user can delete an item from the cart
-Steps:
-1. Add an item to the cart
-2. Open the Cart page via top menu
-3. Click the bin icon
-","0","test_delete_item[chromium-logged_in]","tests","Sun May 24 23:14:09 UTC 2026","failed","Sun May 24 23:14:09 UTC 2026","","test_cart_workflow","",""
+","3850","test_add_item_and_verify_dropdown[chromium-guest]","tests","Sun May 24 23:17:48 UTC 2026","passed","Sun May 24 23:17:52 UTC 2026","","test_cart_workflow","",""
 "
 Verify that a guest/logged in user can add an item multiple times
 Steps:
@@ -45,27 +52,20 @@ Steps:
 3. Check that the cart tab was updated and says 1
 4. Hover over the cart tab and check that it displays correct number of items
 5. Add the same item again and repeat the steps 3 and 4
-","0","test_add_item_and_verify_dropdown[chromium-guest]","tests","Sun May 24 23:14:08 UTC 2026","failed","Sun May 24 23:14:08 UTC 2026","","test_cart_workflow","",""
-"
-If exactly 1 item found - the site redirects user to the product page
-If more than 1 item found - the product cards are listed and the URL contains search text
-If no items found - 'There is no product that matches the search criteria.' message displayed
-","0","test_search_products[chromium-Skinsheen-single-Skinsheen]","tests","Sun May 24 23:14:09 UTC 2026","failed","Sun May 24 23:14:09 UTC 2026","","test_search","",""
-"
-Verify that a guest/logged in user can delete an item from the cart
-Steps:
-1. Add an item to the cart
-2. Open the Cart page via top menu
-3. Click the bin icon
-","0","test_delete_item[chromium-guest]","tests","Sun May 24 23:14:09 UTC 2026","failed","Sun May 24 23:14:09 UTC 2026","","test_cart_workflow","",""
-"
-Verify that a guest/logged in user can change the quantity of an item in the cart
-Steps:
-1. Add an item to the cart
-2. Open the Cart page via top menu
-3. Set new product quantity and click Update
-","0","test_change_quantity[chromium-logged_in]","tests","Sun May 24 23:14:09 UTC 2026","failed","Sun May 24 23:14:09 UTC 2026","","test_cart_workflow","",""
+","3769","test_add_item_and_verify_dropdown[chromium-logged_in]","tests","Sun May 24 23:18:06 UTC 2026","passed","Sun May 24 23:18:09 UTC 2026","","test_cart_workflow","",""
 "
 Auth performed via API
 Check that the user is logged in and the page header is correct
-","0","test_account_page_logged_in_user[chromium-logged_in]","tests","Sun May 24 23:13:38 UTC 2026","failed","Sun May 24 23:13:38 UTC 2026","","test_account_dashboard","",""
+","1962","test_account_page_logged_in_user[chromium-logged_in]","tests","Sun May 24 23:17:46 UTC 2026","passed","Sun May 24 23:17:48 UTC 2026","","test_account_dashboard","",""
+"
+Verify that a guest/logged in user can delete an item from the cart
+Steps:
+1. Add an item to the cart
+2. Open the Cart page via top menu
+3. Click the bin icon
+","4088","test_delete_item[chromium-logged_in]","tests","Sun May 24 23:18:15 UTC 2026","passed","Sun May 24 23:18:19 UTC 2026","","test_cart_workflow","",""
+"
+If exactly 1 item found - the site redirects user to the product page
+If more than 1 item found - the product cards are listed and the URL contains search text
+If no items found - 'There is no product that matches the search criteria.' message displayed
+","4722","test_search_products[chromium-Skinsheen-single-Skinsheen]","tests","Sun May 24 23:18:01 UTC 2026","passed","Sun May 24 23:18:05 UTC 2026","","test_search","",""
